@@ -1,1 +1,34 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <form>
+            <div class="form-group">
+                <label for="adminName">Admin Name:</label>
+                <input type="text" id="adminName" name="adminName" required>
+            </div>
+            <div class="form-group">
+                <label for="setPassword">Set Password:</label>
+                <input type="password" id="setPassword" name="setPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="candidateRole">Candidate Role:</label>
+                <input type="text" id="candidateRole" name="candidateRole" required>
+            </div>
+            <div class="form-group">
+                <label for="noOfCandidates">Number of Candidates:</label>
+                <input type="number" id="noOfCandidates" name="noOfCandidates" required>
+            </div>
+            <button onclick="window.location.href = 'candidates.html';">Submit</button>
+        </form>
+    </div>
+    <script src="script1.js"></script>
+</body>
+</html>
