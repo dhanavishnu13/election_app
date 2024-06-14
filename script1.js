@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // script.js
 document.getElementById('adminForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
@@ -16,3 +17,6 @@ document.getElementById('adminForm').addEventListener('submit', function(event) 
     // Redirect to the candidates page
     window.location.href = 'candidates.html';
 });
+=======
+
+>>>>>>> d931d805f5bff66cf52757607b4cdf9e14a8e079
