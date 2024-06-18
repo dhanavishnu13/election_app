@@ -1,0 +1,84 @@
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.candidate-profile {
+  background-color: #e9e9e9;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.candidate-profile h2 {
+  margin-top: 0;
+}
+
+.candidate-profile input[type="file"] {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.candidate-profile button {
+  background-color: #008CBA;
+}
+
+.candidate-profile button:hover {
+  background-color: #007B9E;
+}
