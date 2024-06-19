@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AdminForm from './components/AdminForm';
 import CandidateProfiles from './components/CandidateProfiles';
 import VotePage from './components/VotePage';

@@ -7,6 +7,11 @@
     padding: 20px;
 }
 
+.vote-page h1 {
+    font-size: 2.5em; /* Increase the font size */
+    margin-bottom: 20px;
+}
+
 .candidates-container {
     display: flex;
     flex-wrap: wrap;
@@ -50,10 +55,11 @@ button:hover {
 
 .vote-summary {
     margin-top: 20px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
-    text-align-last: left;
-    padding-left: 0px;
+    width: 100%;
+    text-align: right;
+    padding-right: 135%;
 }
 
 .buttons-container {
@@ -70,7 +76,6 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 20%;
 }
 
 .result-button:hover {
@@ -81,16 +86,15 @@ button:hover {
     flex: 1;
 }
 
-.close-button {
+.back-button {
     padding: 10px 30px;
-    background-color: #dc3545;
+    background-color: #ffc107;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 20%;
 }
 
-.close-button:hover {
-    background-color: #c82333;
+.back-button:hover {
+    background-color: #e0a800;
 }

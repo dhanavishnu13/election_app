@@ -4,6 +4,7 @@ import './CandidateProfiles.css';
 
 const CandidateProfiles = () => {
     const noOfCandidates = parseInt(sessionStorage.getItem('noOfCandidates'), 10);
+    const candidateRole = sessionStorage.getItem('candidateRole');
     const initialCandidates = Array.from({ length: noOfCandidates }, (_, index) => ({
         id: index + 1,
         name: '',
@@ -12,6 +13,7 @@ const CandidateProfiles = () => {
     }));
 
     const [candidates, setCandidates] = useState(initialCandidates);
+
     const navigate = useNavigate();
 
     const handleChange = (index, field, value) => {
@@ -29,9 +31,15 @@ const CandidateProfiles = () => {
         alert(`Candidate ${id} updated`);
     };
 
+    const role = candidates.length > 0 ? candidates[0].role : '';
+
+
     return (
         <div className="candidate-profiles">
-            <h1>Candidate Registration</h1>
+            <h1>Candidate Registration for {candidateRole}</h1>
+            <br> 
+            
+            </br>
             <div className="candidates-container">
                 {candidates.map((candidate, index) => (
                     <div key={candidate.id} className="candidate">
@@ -48,13 +56,6 @@ const CandidateProfiles = () => {
                             placeholder="Name"
                             value={candidate.name}
                             onChange={(e) => handleChange(index, 'name', e.target.value)}
-                            className="candidate-input"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Role"
-                            value={candidate.role}
-                            onChange={(e) => handleChange(index, 'role', e.target.value)}
                             className="candidate-input"
                         />
                         <button className="upd" type="button" onClick={() => handleVote(candidate.id)}>

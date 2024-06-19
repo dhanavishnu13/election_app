@@ -3,16 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import './AdminForm.css';
 
 const AdminForm = () => {
-    const [adminName, setAdminName] = useState('');
-    const [Password, setPassword] = useState('');
+    const [setPassword, setSetPassword] = useState('');
     const [candidateRole, setCandidateRole] = useState('');
     const [noOfCandidates, setNoOfCandidates] = useState(0);
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        sessionStorage.setItem('adminName', adminName);
-        sessionStorage.setItem('Password', Password);
+
+        sessionStorage.setItem('setPassword', setPassword);
         sessionStorage.setItem('candidateRole', candidateRole);
         sessionStorage.setItem('noOfCandidates', noOfCandidates);
         navigate('/candidates');
@@ -22,26 +21,18 @@ const AdminForm = () => {
         <div className="container">
             <h1>Admin Panel</h1>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="adminName">Admin Name:</label>
-                    <input
-                        type="text"
-                        id="adminName"
-                        value={adminName}
-                        onChange={(e) => setAdminName(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="Password">Password:</label>
+
+            <div className="form-group">
+                    <label htmlFor="setPassword">Set Password:</label>
                     <input
                         type="password"
                         id="setPassword"
-                        value={Password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={setPassword}
+                        onChange={(e) => setSetPassword(e.target.value)}
                         required
                     />
                 </div>
+                
                 <div className="form-group">
                     <label htmlFor="candidateRole">Candidate Role:</label>
                     <input

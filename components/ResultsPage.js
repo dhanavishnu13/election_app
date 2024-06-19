@@ -13,7 +13,7 @@ const ResultsPage = () => {
 
     return (
         <div className="results-page">
-            <h1>Election Results</h1>
+            <h1>Result Day</h1>
             <div className="candidates-container">
                 {votes.map((candidate, index) => (
                     <div key={candidate.id} className="candidate">
@@ -21,7 +21,6 @@ const ResultsPage = () => {
                             <img src={candidate.imgUrl} alt={candidate.name} className="candidate-img" />
                         )}
                         <h2>{candidate.name}</h2>
-                        <p>{candidate.role}</p>
                         <p>Total Votes: {candidate.votes}</p>
                     </div>
                 ))}
