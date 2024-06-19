@@ -1,6 +1,6 @@
-/* src/components/VotePage.css */
+/* src/components/ResultsPage.css */
 
-.vote-page {
+.results-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,47 +48,14 @@ button:hover {
     background-color: #0056b3;
 }
 
-.vote-summary {
-    margin-top: 20px;
-    font-size: 15px;
-    font-weight: bold;
-    text-align-last: left;
-    padding-left: 0px;
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px;
-}
-
-.result-button {
-    padding: 10px 30px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 20%;
-}
-
-.result-button:hover {
-    background-color: #218838;
-}
-
-.spacer {
-    flex: 1;
-}
-
 .close-button {
+    margin-top: 20px;
     padding: 10px 30px;
     background-color: #dc3545;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 20%;
 }
 
 .close-button:hover {

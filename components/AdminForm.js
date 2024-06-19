@@ -1,6 +1,6 @@
-// src/components/AdminForm.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './AdminForm.css';
 
 const AdminForm = () => {
     const [adminName, setAdminName] = useState('');
@@ -62,7 +62,7 @@ const AdminForm = () => {
                         required
                     />
                 </div>
-                <button type="submit">Start</button>
+                <button className="sub" type="submit">Start</button>
             </form>
         </div>
     );

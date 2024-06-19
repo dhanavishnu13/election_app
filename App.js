@@ -1,9 +1,9 @@
-// src/App.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AdminForm from './components/AdminForm';
 import CandidateProfiles from './components/CandidateProfiles';
 import VotePage from './components/VotePage';
+import ResultsPage from './components/ResultsPage';
 import './App.css';
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
                 <Route path="/" element={<AdminForm />} />
                 <Route path="/candidates" element={<CandidateProfiles />} />
                 <Route path="/vote" element={<VotePage />} />
+                <Route path="/results" element={<ResultsPage />} />
             </Routes>
         </div>
     );

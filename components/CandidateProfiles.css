@@ -26,12 +26,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.candidate input[type="file"] {
+    margin-bottom: 10px;
+}
+
 .candidate-img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .candidate-input {
@@ -45,7 +49,7 @@
 .final-submit {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #186e25;
     color: white;
     border: none;
     border-radius: 5px;
@@ -53,5 +57,19 @@
 }
 
 .final-submit:hover {
-    background-color: #0056b3;
+    background-color: #186e25;
+}
+
+.upd{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3fc0d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upd {
+    background-color: #3fc0d4;
 }

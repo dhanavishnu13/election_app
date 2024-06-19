@@ -1,5 +1,5 @@
 // src/components/VotePage.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './VotePage.css';
 
@@ -9,15 +9,30 @@ const VotePage = () => {
     const initialVotes = candidates.map(candidate => ({ ...candidate, votes: 0 }));
 
     const [votes, setVotes] = useState(initialVotes);
+    const [totalVotes, setTotalVotes] = useState(0);
+
+    useEffect(() => {
+        const savedVotes = JSON.parse(sessionStorage.getItem('votes'));
+        if (savedVotes) {
+            setVotes(savedVotes);
+            setTotalVotes(savedVotes.reduce((acc, candidate) => acc + candidate.votes, 0));
+        }
+    }, []);
 
     const handleVote = (index) => {
         const newVotes = [...votes];
         newVotes[index].votes += 1;
         setVotes(newVotes);
+        sessionStorage.setItem('votes', JSON.stringify(newVotes));
+        setTotalVotes(totalVotes + 1);
     };
 
     const handleClose = () => {
         navigate('/');
+    };
+
+    const handleResult = () => {
+        navigate('/results');
     };
 
     return (
@@ -32,11 +47,19 @@ const VotePage = () => {
                         <h2>{candidate.name}</h2>
                         <p>{candidate.role}</p>
                         <button onClick={() => handleVote(index)}>Vote</button>
-                        <p>Total Votes: {candidate.votes}</p>
+
                     </div>
                 ))}
             </div>
-            <button className="close-button" onClick={handleClose}>Close</button>
+
+            <div className="vote-summary">
+                <h2>Total Votes Cast: {totalVotes}</h2>
+            </div>
+            <div className="buttons-container">
+                <button className="result-button" onClick={handleResult}>Result</button>
+                <div className="spacer"></div>
+                <button className="close-button" onClick={handleClose}>Close</button>
+            </div>
         </div>
     );
 };

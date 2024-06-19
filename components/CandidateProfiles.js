@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './CandidateProfiles.css'; 
+import './CandidateProfiles.css';
 
 const CandidateProfiles = () => {
     const noOfCandidates = parseInt(sessionStorage.getItem('noOfCandidates'), 10);
@@ -9,7 +9,6 @@ const CandidateProfiles = () => {
         name: '',
         role: '',
         imgUrl: ''
-        
     }));
 
     const [candidates, setCandidates] = useState(initialCandidates);
@@ -33,36 +32,37 @@ const CandidateProfiles = () => {
     return (
         <div className="candidate-profiles">
             <h1>Candidate Registration</h1>
-            {candidates.map((candidate, index) => (
-                <div key={candidate.id} className="candidate">
-                    <input
-                        type="file"
-                        accept="image/*"
-                        onChange={(e) => handleChange(index, 'imgUrl', URL.createObjectURL(e.target.files[0]))}
-                    />
-                    {candidate.imgUrl && (
-                        <img src={candidate.imgUrl} alt={`Candidate ${index + 1}`} className="candidate-img" />
-                    )}
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        value={candidate.name}
-                        onChange={(e) => handleChange(index, 'name', e.target.value)}
-                        className="candidate-input"
-                    />
-                    <input
-                        type="text"
-                        placeholder="Role"
-                        value={candidate.role}
-                        onChange={(e) => handleChange(index, 'role', e.target.value)}
-                        className="candidate-input"
-                    />
-                    <button type="button" onClick={() => handleVote(candidate.id)}>
+            <div className="candidates-container">
+                {candidates.map((candidate, index) => (
+                    <div key={candidate.id} className="candidate">
+                        <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => handleChange(index, 'imgUrl', URL.createObjectURL(e.target.files[0]))}
+                        />
+                        {candidate.imgUrl && (
+                            <img src={candidate.imgUrl} alt={`Candidate ${index + 1}`} className="candidate-img" />
+                        )}
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            value={candidate.name}
+                            onChange={(e) => handleChange(index, 'name', e.target.value)}
+                            className="candidate-input"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Role"
+                            value={candidate.role}
+                            onChange={(e) => handleChange(index, 'role', e.target.value)}
+                            className="candidate-input"
+                        />
+                        <button className="upd" type="button" onClick={() => handleVote(candidate.id)}>
                             Update
                         </button>
-
-                </div>    
-            ))}
+                    </div>
+                ))}
+            </div>
             <button className="final-submit" onClick={handleSubmit}>Submit All</button>
         </div>
     );
